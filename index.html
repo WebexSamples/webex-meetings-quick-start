@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <title>Webex Teams Meetings Quick Start</title>
+  <body>
+    <h1>Meetings Quick Start</h1>
+    <p>This sample demonstrates how to start a meeting using Webex JS-SDK in the browser.</p>
+
+    <form id="destination">
+      <input
+        id="invitee"
+        name="invitee"
+        placeholder="Person ID or Email Address or SIP URI or Room ID"
+        type="text">
+        <input title="join" type="submit" value="join">
+    </form>
+
+    <div style="display: flex">
+      <video style="width:50%" id="self-view" muted autoplay></video>
+      <div style="width:50%">
+        <audio id="remote-view-audio" autoplay></audio>
+        <video id="remote-view-video" autoplay></video>
+      </div>
+    </div>
+
+    <button id="hangup" title="hangup" type="button">cancel/hangup</button>
+
+    <script src="./index.js"></script>
+  </body>
+</html>

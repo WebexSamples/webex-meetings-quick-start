@@ -1,0 +1,19 @@
+{
+  "name": "webex-meetings-quick-start",
+  "version": "1.0.0",
+  "description": "Webex Meetings Quick Start",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html"
+  },
+  "repository": "https://github.com/WebexSamples/webex-meetings-quick-start",
+  "keywords": [],
+  "author": "Adam Weeks <adweeks@cisco.com>",
+  "license": "ISC",
+  "dependencies": {
+    "webex": "^1.77.4"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.3"
+  }
+}
