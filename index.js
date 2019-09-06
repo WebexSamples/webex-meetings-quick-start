@@ -16,8 +16,7 @@ const webex = Webex.init({
 
 webex.config.logger.level = 'debug';
 
-webex.internal.device.register()
-  .then(() => webex.internal.mercury.connect())
+webex.meetings.register()
   .catch((err) => {
     console.error(err);
     alert(err);
