@@ -4,7 +4,7 @@
   "description": "Webex Meetings Quick Start",
   "main": "index.js",
   "scripts": {
-    "start": "parcel index.html"
+    "start": "parcel index.html --https"
   },
   "repository": "https://github.com/WebexSamples/webex-meetings-quick-start",
   "keywords": [],
