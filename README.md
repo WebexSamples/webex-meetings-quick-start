@@ -17,6 +17,9 @@ git clone git@github.com:WebexSamples/webex-meetings-quick-start.git
 yarn install
 ```
 
+> [!NOTE]
+> You need to be on Node V18
+
 ### Add Personal Access Token
 
 For this example, we'll use your personal access token which can be found in [Getting Started](https://developer.webex.com/docs/api/getting-started#accounts-and-authentication) if you're logged in. This token provides access to your account for testing purposes, and shouldn't be used for anything other than testing. If you don't already have a Webex Teams account, click Sign Up at the top of this page to create a new account.
