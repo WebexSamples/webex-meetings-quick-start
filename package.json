@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Webex Meetings Quick Start",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "start": "parcel index.html --no-cache"
+  },
   "repository": "https://github.com/WebexSamples/webex-meetings-quick-start",
   "keywords": [],
   "author": "Adam Weeks <adweeks@cisco.com>",

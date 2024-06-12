@@ -14,7 +14,7 @@ git clone git@github.com:WebexSamples/webex-meetings-quick-start.git
 ### Install Dependencies
 
 ```bash
-npm install
+yarn install
 ```
 
 ### Add Personal Access Token
@@ -30,7 +30,7 @@ In this example we'll use [Parcel](https://parceljs.org/) to build and serve our
 Let's serve the web app with Parcel and start a meeting in the browser!
 
 ```bash
-npm start
+yarn start
 ```
 
 Open the app ([http://localhost:1234](http://localhost:1234/)) in your browser to use your new web app! 
