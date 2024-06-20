@@ -33,9 +33,6 @@ function bindMeetingEvents(meeting) {
     if (!media) {
       return;
     }
-    if (media.type === 'local') {
-      document.getElementById('self-view').srcObject = media.stream;
-    }
     if (media.type === 'remoteVideo') {
       document.getElementById('remote-view-video').srcObject = media.stream;
     }
@@ -47,9 +44,6 @@ function bindMeetingEvents(meeting) {
   // Handle media streams stopping
   meeting.on('media:stopped', (media) => {
     // Remove media streams
-    if (media.type === 'local') {
-      document.getElementById('self-view').srcObject = null;
-    }
     if (media.type === 'remoteVideo') {
       document.getElementById('remote-view-video').srcObject = null;
     }
@@ -65,30 +59,32 @@ function bindMeetingEvents(meeting) {
 }
 
 // Join the meeting and add media
-function joinMeeting(meeting) {
-  
-  return meeting.join().then(() => {
-    const mediaSettings = {
-      receiveVideo: true,
-      receiveAudio: true,
-      receiveShare: false,
-      sendVideo: true,
-      sendAudio: true,
-      sendShare: false
+// Join the meeting and add media through joinWithMedia method.
+async function joinMeeting(meeting) {
+
+    const microphoneStream = await webex.meetings.mediaHelpers.createMicrophoneStream({
+      echoCancellation: true,
+      noiseSuppression: true,
+    });
+
+    const cameraStream = await webex.meetings.mediaHelpers.createCameraStream({ width: 640, height: 480 });
+    document.getElementById('self-view').srcObject=cameraStream.outputStream;
+
+    const meetingOptions = {
+      mediaOptions: {
+        allowMediaInLobby: true,
+        shareAudioEnabled: false,
+        shareVideoEnabled: false,
+        localStreams:{
+          camera:cameraStream,
+          microphone: microphoneStream
+        },      
+      },
     };
 
-    // Get our local media stream and add it to the meeting
-    return meeting.getMediaStreams(mediaSettings).then((mediaStreams) => {
-      const [localStream, localShare] = mediaStreams;
+    await meeting.joinWithMedia(meetingOptions);
 
-      meeting.addMedia({
-        localShare,
-        localStream,
-        mediaSettings
-      });
-    });
-  });
-}
+  } 
 
 document.getElementById('destination').addEventListener('submit', (event) => {
   // again, we don't want to reload when we try to join
