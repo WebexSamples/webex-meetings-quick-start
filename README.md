@@ -18,7 +18,7 @@ yarn install
 ```
 
 > [!NOTE]
-> You need to be on Node V18
+> You need to be on Node V18. If not `yarn install` will throw an error stating the same
 
 ### Add Personal Access Token
 

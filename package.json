@@ -13,6 +13,9 @@
   "dependencies": {
     "webex": "3.1.0"
   },
+  "engines" : {
+    "node" : ">=18.0.0"
+  },
   "resolutions": {
     "@webex/plugin-presence": "0.0.0-next.25"
   },
